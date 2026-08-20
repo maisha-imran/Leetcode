@@ -34,7 +34,7 @@ class Solution2 {
     }
 }
 
-class Solution {
+class Solution3 {
     public boolean isAnagram(String s, String t) {
         if( s.length() != t.length())
             return false;
@@ -48,5 +48,17 @@ class Solution {
            return true;
         else 
             return false;
+    }
+}
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        char[] a = s.toCharArray();
+        char[] b = t.toCharArray();
+
+        Arrays.sort(a);
+        Arrays.sort(b);
+
+        return Arrays.equals(a, b);
     }
 }
