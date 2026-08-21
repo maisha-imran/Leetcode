@@ -59,8 +59,6 @@ class MyLinkedList {
     }
     
     public void deleteAtIndex(int index) {
-        if( head == null )
-            return;
         if ( index == 0){
             head = head.next;
             return;
