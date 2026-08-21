@@ -3,13 +3,7 @@ class MyLinkedList {
     class Node {
         int val;
         Node next;
-
-        Node(int val) {
-            this.val = val;
-            this.next = null;
-        }
-
-        Node(int val, Node next) {
+    Node(int val, Node next) {
             this.val = val;
             this.next = next;
         }
@@ -36,15 +30,14 @@ class MyLinkedList {
     
     public void addAtTail(int val) {
         if( head == null){
-            head = new Node( val , null);
+            addAtHead(val);
             return;
         }
         Node temp = head;
         while( temp.next != null){
             temp = temp.next;
         }
-        Node naya = new Node(val , null);
-        temp.next = naya;
+        temp.next = new Node(val , null);
     }
     
     public void addAtIndex(int index, int val) {
@@ -53,17 +46,16 @@ class MyLinkedList {
             return;
         }
         Node temp = head;
-        int c=0;
+        int c=1;
         while(temp !=null){
-            if( c == index -1)
+            if( c == index )
                 break;
             temp = temp.next;
             c++;
         }
         if( temp ==null)
             return;
-        Node naya = new Node( val , temp.next);
-        temp.next = naya;
+        temp.next= new Node( val , temp.next);
     }
     
     public void deleteAtIndex(int index) {
@@ -74,9 +66,9 @@ class MyLinkedList {
             return;
         }
         Node temp = head;
-        int c=0;
+        int c=1;
         while( temp != null){
-            if ( c==index-1)
+            if ( c==index)
                 break;
             temp = temp.next;
             c++;
