@@ -48,14 +48,14 @@ class MyLinkedList {
         Node temp = head;
         int c=1;
         while(temp !=null){
-            if( c == index )
-                break;
+            if( c == index ){
+                temp.next= new Node( val , temp.next);
+                return;
+            }
             temp = temp.next;
             c++;
         }
-        if( temp ==null)
-            return;
-        temp.next= new Node( val , temp.next);
+        return;
     }
     
     public void deleteAtIndex(int index) {
@@ -67,15 +67,15 @@ class MyLinkedList {
         }
         Node temp = head;
         int c=1;
-        while( temp != null){
-            if ( c==index)
-                break;
+        while( temp.next != null){
+            if ( c==index){
+                temp.next = temp.next.next;
+                return;
+            }
             temp = temp.next;
             c++;
         }
-        if (temp == null || temp.next == null)
-            return;
-        temp.next = temp.next.next;
+        return;
     }
 }
 
