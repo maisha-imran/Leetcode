@@ -8,7 +8,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution2 {
+class Solution {
     public boolean isPalindrome(ListNode head) {
         ListNode slow = head, fast = head;
         while (fast != null && fast.next != null) {
@@ -52,7 +52,7 @@ class Solution1 {
     }
 }
 
-class Solution {
+class Solution2 {
     public boolean isPalindrome(ListNode head) {
         ListNode slow = head, fast = head;
         Stack <Integer> st = new Stack<>();
