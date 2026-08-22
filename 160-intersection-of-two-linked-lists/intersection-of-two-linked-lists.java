@@ -1,5 +1,5 @@
 
-// public class Solution1 {
+// public class Solution2 {
 //     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 //         ListNode temp1 = headA;
 //         ListNode temp2 = headB;
@@ -33,24 +33,41 @@
 //     }
 // }
 
+// public class Solution1 {
+//     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+//         ListNode a = headA;
+//         ListNode b = headB;
+
+//         while (a != b) {
+
+//             if (a == null)
+//                 a = headB;
+//             else
+//                 a = a.next;
+
+//             if (b == null)
+//                 b = headA;
+//             else
+//                 b = b.next;
+//         }
+
+//         return a;
+//     }
+// }
+
+
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        ListNode a = headA;
-        ListNode b = headB;
-
-        while (a != b) {
-
-            if (a == null)
-                a = headB;
-            else
-                a = a.next;
-
-            if (b == null)
-                b = headA;
-            else
-                b = b.next;
+    Set<ListNode> st = new HashSet<>(); 
+        while (headA != null) {
+            st.add(headA); 
+            headA = headA.next;
         }
-
-        return a;
+        while (headB != null) {
+            if (st.contains(headB)) 
+                return headB;  
+            headB = headB.next;
+        }
+        return null;  
     }
 }
