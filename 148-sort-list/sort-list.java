@@ -41,20 +41,24 @@ class Solution {
             }
             ptr = ptr.next;
         }
-        if( l1 == null){
-            while( l2 != null){
-                ptr.next = l2;
-                l2 = l2.next;
-                ptr = ptr.next;
-            }
-        }
-        else{
-            while( l1 != null){
+        // if( l1 == null){
+        //     while( l2 != null){
+        //         ptr.next = l2;
+        //         l2 = l2.next;
+        //         ptr = ptr.next;
+        //     }
+        // }
+        // else{
+        //     while( l1 != null){
+        //     ptr.next = l1;
+        //     l1 = l1.next;
+        //     ptr = ptr.next;
+        //     }
+        // }
+        if( l1 == null)
+            ptr.next = l2;
+        else 
             ptr.next = l1;
-            l1 = l1.next;
-            ptr = ptr.next;
-            }
-        }
         return headnew.next;
     }
     public ListNode sortList(ListNode head) {
