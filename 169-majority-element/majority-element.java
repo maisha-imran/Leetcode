@@ -1,4 +1,4 @@
-class Solution1 {
+class Solution2 {
     public int majorityElement(int[] nums) {
         int n = nums.length;
         HashMap < Integer , Integer > map = new HashMap<>();
@@ -12,7 +12,7 @@ class Solution1 {
         return -1;
     }
 }
-class Solution {
+class Solution1 {
     public int majorityElement(int[] nums) {
         int c = 0;
         for ( int i =0 ; i < nums.length ; i++){
@@ -25,5 +25,24 @@ class Solution {
             c=0;
         }
         return 0;
+    }
+}
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        int elem = nums[0];
+        int c =0;
+        for ( int num : nums){
+            if( num == elem )
+                c++;
+            else{ 
+                c--;
+                if( c==0){
+                    c=1;
+                    elem = num;
+                }
+            }
+        }
+        return elem;
     }
 }
