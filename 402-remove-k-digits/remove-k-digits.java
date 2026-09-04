@@ -19,15 +19,19 @@ class Solution {
             st.pop();
             k--;
         }
-        String s = "";
-        while(!st.isEmpty()){
-            s = st.pop() + s;
+        StringBuilder sb = new StringBuilder();
+        while (!st.isEmpty()) {
+            sb.append(st.pop());
         }
+        sb.reverse();
+        String s = sb.toString();
         int i = 0;
-        while(i < s.length()-1 && s.charAt(i) =='0'){
+        while (i < s.length() - 1 && s.charAt(i) == '0') {
             i++;
         }
+
         s = s.substring(i);
+
         return s;
     }
 }
