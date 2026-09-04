@@ -8,11 +8,9 @@ class Solution {
             if (st.isEmpty() || k == 0 || st.peek() <= num.charAt(i))
                 st.push(num.charAt(i));
             else {
-                while(!st.isEmpty() && st.peek() > num.charAt(i)){
+                while(!st.isEmpty() && st.peek() > num.charAt(i) && k > 0){
                     st.pop();
                     k--;
-                    if( k == 0)
-                        break;
                 }
                 st.push(num.charAt(i));
             }
